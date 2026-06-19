@@ -24,6 +24,7 @@ jobs:
           USE_AI: false
           USE_FIRESTORE: false
           PROJECT_ID: test
+          PYTHONPATH: .
 
   frontend-test:
     runs-on: ubuntu-latest
