@@ -27,11 +27,21 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         return response
 
 
+import os
+
 def configure_cors(app: FastAPI) -> None:
     """Configure CORS — restrict in production."""
+    allowed_origins = [
+        "http://localhost:5173",
+        "https://harshit-925.github.io",
+    ]
+    env_origins = os.getenv("ALLOWED_ORIGINS")
+    if env_origins:
+        allowed_origins.extend([o.strip() for o in env_origins.split(",") if o.strip()])
+
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173", "https://your-deployed-domain.com"],
+        allow_origins=allowed_origins,
         allow_credentials=False,
         allow_methods=["GET", "POST"],
         allow_headers=["Content-Type"],

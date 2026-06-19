@@ -43,7 +43,7 @@ function getClientFallback(input: NutritionInput): NutritionResult {
 export const api = {
   analyze: async (input: NutritionInput): Promise<NutritionResult> => {
     try {
-      if (typeof window !== 'undefined' && window.location.hostname.endsWith('github.io')) {
+      if (typeof window !== 'undefined' && window.location.hostname.endsWith('github.io') && !import.meta.env.VITE_API_URL) {
         return getClientFallback(input);
       }
       return await post<NutritionInput, NutritionResult>('/analyze', input);

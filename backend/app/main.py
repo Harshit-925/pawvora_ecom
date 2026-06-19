@@ -27,6 +27,22 @@ def create_app() -> FastAPI:
     # Routes
     app.include_router(router)
 
+    # Serve static files if build directory exists (production single-container deploy)
+    import os
+    from fastapi.staticfiles import StaticFiles
+    
+    # Try /app/app/static first, then /app/static, then local static
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    static_dirs = [
+        os.path.join(base_dir, "app", "static"),
+        os.path.join(base_dir, "static"),
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
+    ]
+    for s_dir in static_dirs:
+        if os.path.exists(s_dir) and os.path.isdir(s_dir):
+            app.mount("/", StaticFiles(directory=s_dir, html=True), name="static")
+            break
+
     return app
 
 
