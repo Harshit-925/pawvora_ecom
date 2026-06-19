@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-brand-dark: #1F2937;
+  --color-brand-primary: #10B981; /* Fresh Green */
+  --color-brand-accent: #F59E0B; /* Amber */
+  --color-brand-light: #FDFBF7;
+  --color-brand-muted: #E5E7EB;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
