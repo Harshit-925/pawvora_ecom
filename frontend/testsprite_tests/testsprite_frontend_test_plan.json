@@ -1,0 +1,292 @@
+[
+  {
+    "id": "TC001",
+    "title": "Open and close the cart drawer from the homepage",
+    "description": "This verifies that a visitor can open and close the sliding cart drawer from the homepage without leaving the page.",
+    "category": "Home Navigation View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart drawer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart drawer is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Close the cart drawer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart drawer is hidden"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Keep cart count and contents in sync across components",
+    "description": "This verifies that a shopper sees matching cart updates in the page UI and the cart drawer after adding a product.",
+    "category": "Zustand Cart Handler",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "action",
+        "description": "Select a product card to add it to the cart"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart drawer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart drawer shows the added item"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart item count matches the added item"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Navigate from homepage using the global navbar",
+    "description": "This verifies that a visitor can use the global navigation from the homepage and remain on a safe in-app page while changing views.",
+    "category": "Home Navigation View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to go to another in-app page from the global navbar"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app remains on a valid page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the global navigation is still available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Keep cart contents visible after navigating around the app",
+    "description": "This verifies that cart state remains available when a shopper opens the drawer, navigates within the app, and returns to the cart view.",
+    "category": "Home Navigation View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart drawer"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to navigate to the products section"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart drawer again"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart drawer contents are still available"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart item count is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Select a product from the showcase to update cart state",
+    "description": "This verifies that selecting a product from the showcase updates the shared cart state and makes the change visible in the cart drawer.",
+    "category": "Zustand Cart Handler",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "action",
+        "description": "Select a product card to add it to the cart"
+      },
+      {
+        "type": "action",
+        "description": "Open the cart drawer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected product appears in the cart drawer"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cart item count is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "Browse the products showcase section",
+    "description": "This verifies that a shopper can reach the products showcase and see the interactive product browsing area on the page.",
+    "category": "Product Carousel Showcase",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the products section is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify product cards are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Move through the product carousel pages",
+    "description": "This verifies that a shopper can paginate through the 28-item showcase and see different product cards as they browse.",
+    "category": "Product Carousel Showcase",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "action",
+        "description": "Use the carousel pagination control to move forward"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a different set of product cards is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify pagination controls remain available"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Filter products by category",
+    "description": "This verifies that a shopper can change the category filter and see the product grid update to the selected category.",
+    "category": "Product Carousel Showcase",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "action",
+        "description": "Select a product category from the category strip"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the product grid updates to match the selected category"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify filtered product cards are visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Handle broken navigation safely",
+    "description": "This verifies that an attempted broken or unavailable navigation keeps the user on a safe page and shows a usable fallback state.",
+    "category": "Home Navigation View",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click a broken or unavailable in-app link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a safe fallback page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a usable not-found or failed-navigation state is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC010",
+    "title": "Show an empty state for an invalid product filter",
+    "description": "This verifies that applying a no-match product filter shows an empty results state without breaking the product showcase.",
+    "category": "Product Carousel Showcase",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to the products showcase section"
+      },
+      {
+        "type": "action",
+        "description": "Apply a product filter with no matching items"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the products showcase remains usable"
+      }
+    ],
+    "priority": "Low"
+  }
+]

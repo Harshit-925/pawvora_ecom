@@ -1,4 +1,32 @@
-/** Dynamic Animal Food domain types */
+/** PawVora domain types */
+
+export type PetCategory = 'dogs' | 'cats' | 'small-animals';
+export type ProductCategory = 'food' | 'treats' | 'toys' | 'accessories';
+
+export interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  price: number;
+  rating: number;
+  reviewCount: number;
+  petCategory: PetCategory;
+  productCategory: ProductCategory;
+  image: string;
+  badges: string[];
+  description: string;
+  isNew?: boolean;
+  isBestSeller?: boolean;
+}
+
+export interface CartItem extends Product {
+  quantity: number;
+}
+
+export interface CartState {
+  items: CartItem[];
+  isOpen: boolean;
+}
 
 export interface NutritionInput {
   session_id: string;

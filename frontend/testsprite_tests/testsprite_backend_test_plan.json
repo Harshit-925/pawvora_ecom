@@ -1,0 +1,27 @@
+[
+  {
+    "id": "TC001",
+    "title": "get_main_webpage_navigation_header",
+    "description": "Verify that a GET request to the root endpoint '/' returns a 200 status code with the main webpage HTML content, and that the global navbar and sliding cart drawer are accessible and functional without authentication."
+  },
+  {
+    "id": "TC002",
+    "title": "get_products_section_with_valid_filters",
+    "description": "Verify that a GET request to '/#products' returns a 200 status code with HTML containing the products section, and that the product carousel displays 28 pet food items with pagination controls and category filtering working correctly without authentication."
+  },
+  {
+    "id": "TC003",
+    "title": "get_products_section_with_invalid_filters",
+    "description": "Verify that a GET request to '/#products' with invalid or empty filter parameters returns a 200 status code with HTML showing an empty or filtered state indicating no matching items, ensuring the UI handles invalid filters gracefully."
+  },
+  {
+    "id": "TC004",
+    "title": "post_cart_with_valid_payload",
+    "description": "Verify that a POST request to '/cart' with a valid cart mutation payload returns a 200 status code with an object confirming the updated cart state, and that the UI reflects the updated item count and cart contents accordingly."
+  },
+  {
+    "id": "TC005",
+    "title": "post_cart_with_invalid_payload",
+    "description": "Verify that a POST request to '/cart' with an invalid or malformed payload returns a 4xx error response, the cart state is not updated, and the UI preserves the previous valid cart state without errors."
+  }
+]

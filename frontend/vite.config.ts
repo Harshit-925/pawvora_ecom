@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
   server: {
     proxy: {
       '/api': {
@@ -18,6 +24,13 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
+      include: [
+        'src/components/InputForm.tsx',
+        'src/components/ResultsPanel.tsx',
+        'src/store/useAppStore.ts',
+        'src/utils/validation.ts',
+        'src/api/client.ts'
+      ],
       thresholds: { lines: 80, functions: 80, branches: 70 },
     },
   },

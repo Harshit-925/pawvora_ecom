@@ -119,9 +119,10 @@ export const InputForm: React.FC = () => {
               placeholder="e.g. Golden Retriever"
               className={inputClasses}
               aria-invalid={!!formErrors.pet_breed}
+              aria-describedby={formErrors.pet_breed ? `${formId}-breed-error` : undefined}
             />
           </div>
-          {formErrors.pet_breed && <p className="text-red-500 text-xs mt-1">{formErrors.pet_breed}</p>}
+          {formErrors.pet_breed && <p id={`${formId}-breed-error`} className="text-red-500 text-xs mt-1">{formErrors.pet_breed}</p>}
         </div>
 
         <div>
@@ -137,9 +138,10 @@ export const InputForm: React.FC = () => {
               placeholder="24"
               className={inputClasses}
               aria-invalid={!!formErrors.pet_age_months}
+              aria-describedby={formErrors.pet_age_months ? `${formId}-age-error` : undefined}
             />
           </div>
-          {formErrors.pet_age_months && <p className="text-red-500 text-xs mt-1">{formErrors.pet_age_months}</p>}
+          {formErrors.pet_age_months && <p id={`${formId}-age-error`} className="text-red-500 text-xs mt-1">{formErrors.pet_age_months}</p>}
         </div>
 
         <div>
@@ -156,9 +158,10 @@ export const InputForm: React.FC = () => {
               placeholder="15.5"
               className={inputClasses}
               aria-invalid={!!formErrors.pet_weight_kg}
+              aria-describedby={formErrors.pet_weight_kg ? `${formId}-weight-error` : undefined}
             />
           </div>
-          {formErrors.pet_weight_kg && <p className="text-red-500 text-xs mt-1">{formErrors.pet_weight_kg}</p>}
+          {formErrors.pet_weight_kg && <p id={`${formId}-weight-error`} className="text-red-500 text-xs mt-1">{formErrors.pet_weight_kg}</p>}
         </div>
       </div>
 

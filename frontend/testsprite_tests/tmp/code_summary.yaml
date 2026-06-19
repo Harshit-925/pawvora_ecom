@@ -1,0 +1,44 @@
+version: "2"
+type: backend
+tech_stack:
+  - TypeScript
+  - Vite / React
+  - Tailwind CSS
+  - Framer Motion / GSAP
+features:
+  - name: Home Navigation View
+    description: Global navbar navigation with a sliding cart drawer and routing.
+    files:
+      - src/components/Navbar.tsx
+    endpoints:
+      - method: GET
+        path: /
+        description: Access main webpage navigation header.
+        auth_required: false
+        response_schema:
+          "200": HTML
+  - name: Product Carousel Showcase
+    description: GSAP Card Fan Carousel rendering the 28 clean pet food items with paginate controls and categories strip.
+    files:
+      - src/components/ui/card-fan-carousel.tsx
+      - src/components/ProductGrid.tsx
+    endpoints:
+      - method: GET
+        path: /#products
+        description: List of filtered food and accessory items.
+        auth_required: false
+        response_schema:
+          "200": HTML
+  - name: Zustand Cart Handler
+    description: Global shopping cart state management linking product clicks to cart drawer items.
+    files:
+      - src/store/useAppStore.ts
+      - src/components/Cart.tsx
+    endpoints:
+      - method: POST
+        path: /cart
+        description: Mutate global shopping cart items state.
+        auth_required: false
+        response_schema:
+          "200": Object
+known_limitations: []

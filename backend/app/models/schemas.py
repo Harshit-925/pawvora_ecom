@@ -4,7 +4,7 @@ All fields validated — no raw dicts passed between layers.
 """
 from pydantic import BaseModel, Field, field_validator
 from typing import Optional
-from datetime import datetime
+from datetime import datetime, timezone
 import uuid
 
 
@@ -34,7 +34,7 @@ class NutritionResult(BaseModel):
     """Output schema returned to the client."""
     
     session_id: str
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     recommended_calories: float = Field(..., description="Recommended daily calorie intake")
     ai_insights: list[str] = Field(default_factory=list)
     fallback_used: bool = False

@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:5173",
+  "backendAuthType": "public",
+  "executionArgs": {
+    "projectName": "dynamic-animal-food-platform",
+    "projectPath": "C:\\Users\\hk672\\.gemini\\antigravity-ide\\scratch\\dynamic-animal-food-platform\\frontend",
+    "testIds": [],
+    "additionalInstruction": "",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-yUyvNnNNRSWYty_WrVlAGswwNtIadl7u09iPZ3RoeCF610a-p29U4efNJlHjLtff6tAZfWE-bIQkRVdl0Y0mxzuKQzLGrhYA3_-d8YrpuY85lSdK8Bp8rawaL-6g_2Tcok8"
+    }
+  },
+  "serverPort": 53728
+}
