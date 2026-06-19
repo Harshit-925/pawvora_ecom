@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { useAppStore, useStore } from '../src/store/useAppStore';
+import { useStore } from '../src/store/useAppStore';
 import { api } from '../src/api/client';
 import type { Product, NutritionResult } from '../src/types';
 
